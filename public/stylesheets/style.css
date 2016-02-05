@@ -1,0 +1,70 @@
+body {
+  padding: 50px 0px 0px 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+ul li{
+  display: inline-block;
+}
+
+.check{
+  display: block;
+  clear: both;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table{
+  float: left;
+  margin: 0px 10px 0px 10px;
+}
+
+form{
+  float: left;
+  margin: 0px 10px 0px 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+td, th{
+  border: 1px solid black;
+  width: 200px;
+}
+
+tr{
+  border: 1px solid black;
+}
+
+.well{
+  margin: 5px;
+  padding: 10px;
+}
+
+#main{
+  height: 400px;
+}
+
+#nav{
+  padding-bottom: 20px;
+}
+
+.main{
+  margin-left: 50px;
+}
+
+.delete{
+  float: right;
+}
+
+.display{
+  width: 200px;
+}

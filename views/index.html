@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <link rel="stylesheet" href="/vendor/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+
+
+        <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-aria/angular-aria.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-messages/angular-messages.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-material/angular-material.min.js"></script>
+
+        <script type="text/javascript" src="/javascripts/app.min.js"></script>
+
+        <script type="text/javascript" src="/javascripts/controllers/entry.min.js"></script>
+        <script type="text/javascript" src="/javascripts/controllers/edit.min.js"></script>
+        <script type="text/javascript" src="/javascripts/controllers/view.min.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <ul class="nav">
+                <li><a href="#entry">
+                    <md-content>
+                        <md-button class="md-raised md-primary" id="button1">Entry</md-button>
+                    </md-content>
+                </a></li>
+                <li><a href="#view">
+                 <md-content>
+                     <md-button class="md-raised md-primary">View</md-button>
+                 </md-content>
+                </a></li>
+                <li><a href="#edit">
+                 <md-content>
+                     <md-button class="md-raised md-primary">Edit</md-button>
+                 </md-content>
+                </a></li>
+            </ul>
+        </div>
+
+        <div class='main'>
+            <main ng-view></main>
+        </div>
+    </body>
+</html>

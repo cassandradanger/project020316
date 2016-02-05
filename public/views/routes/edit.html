@@ -1,0 +1,12 @@
+<section ng-controller="EditController">
+Meow
+    {{message}}
+
+    <section ng-controller="EntryController">
+        <h4>Cats</h4>
+        <ul class="display">
+            <li class="check" ng-repeat="cat in cats">{{cat.name}} <input type='submit' ng-click='edit(cat)' value='Delete' class="delete"/></li>
+        </ul>
+    </section>
+
+</section>

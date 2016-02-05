@@ -1,0 +1,9 @@
+<section ng-controller="EntryController">
+    <p ng-show="cat.name">Your new cats name is: {{cat.name}}</p>
+    <p ng-hide="cat.name">Enter your new cats name</p>
+
+    <form novalidate>
+        Name: <input type="text" ng-model="cat.name"/><br/>
+        <input type="submit" ng-click="add(cat)" value="Save"/>
+    </form>
+</section>
