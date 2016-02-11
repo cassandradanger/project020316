@@ -4,20 +4,6 @@
 console.log("entry.js controller is Loaded");
 
 myApp.controller('EntryController',["$scope", "$http", function($scope, $http) {
-    console.log("entry");
-    
-    $scope.message = {};
-
-    $http({
-        method: 'GET',
-        url: '/entry'
-    }).then(function successCallback(response) {
-        console.log(response.data.message);
-        $scope.message = response.data.message;
-    }, function errorCallback(response) {
-        console.log("you suck");
-    });
-
     $scope.cat = {};
     $scope.cats = [];
 
@@ -36,12 +22,6 @@ myApp.controller('EntryController',["$scope", "$http", function($scope, $http) {
 
     $scope.add = function(cat){
         return $http.post('/add', cat).then(fetchCats);
-    };
-
-    $scope.remove = function(cat){
-        console.log('yup', cat._id);
-        $http.delete('/delete/' + cat._id).then(fetchCats);
-        console.log('duh');
     };
 
     fetchCats();

@@ -8,7 +8,11 @@ console.log("index.js routes loaded #1");
 //mongoose.connect("mongodb://localhost/project020316");
 mongoose.connect("mongodb://casie:kubRA6Ub@ds033123.mongolab.com:33123/secondtest")
 
-var Cat = mongoose.model("Cat", {name:String});
+var Cat = mongoose.model("Cat", {
+  firstName:String,
+  lastName: String,
+  pizza: String
+});
 
 router.delete('/delete/:id', function(request, response, next){
  //response.send("Delete!");
@@ -19,9 +23,19 @@ router.delete('/delete/:id', function(request, response, next){
  console.log("huh?");
 });
 
+router.put('/edit/:id', function(request, response, next){
+ //response.send("Delete!");
+ console.log(request.params.id);
+ Cat.findByIdAndUpdate(request.params.id, function (err, post) {
+  response.json(post);
+ });
+ console.log("edit?");
+});
+
+
 router.post('/add', function(request, response, next){
  console.log("adding");
- var kitty = new Cat({name: request.body.name});
+ var kitty = new Cat({firstName: request.body.firstName, lastName: request.body.lastName, pizza: request.body.pizza});
  kitty.save(function(err){
   if(err) console.log("meows", err);
   response.send(kitty.toJSON());
