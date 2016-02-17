@@ -23,13 +23,26 @@ router.delete('/delete/:id', function(request, response, next){
  console.log("huh?");
 });
 
-router.put('/edit/:id', function(request, response, next){
- //response.send("Delete!");
+router.get('/get/:id', function(request, response, next){
  console.log(request.params.id);
- Cat.findByIdAndUpdate(request.params.id, function (err, post) {
+ Cat.findById(request.params.id, function (err, post) {
   response.json(post);
  });
- console.log("edit?");
+ console.log("get by id?");
+});
+
+router.put('/put', function(request, response, next){
+ console.log("HERE", request.body);
+ var updateObject = {
+      firstName : request.body.firstName,
+      lastName : request.body.lastName,
+      pizza : request.body.pizza
+ };
+
+ Cat.findByIdAndUpdate(request.body._id, updateObject,  function (err, post) {
+  response.json(post);
+ });
+ console.log("update by id?");
 });
 
 

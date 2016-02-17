@@ -3,9 +3,11 @@
  */
 
 myApp.controller('EditController',["$scope", "$http", function($scope, $http) {
-
+    $scope.editEnabled = false;
     $scope.cat = {};
     $scope.cats = [];
+    $scope.editCat = {};
+
     //
     //var fetchCats = function(){
     //    return $http.get('/cats').then(function(response){
@@ -28,7 +30,26 @@ myApp.controller('EditController',["$scope", "$http", function($scope, $http) {
     };
 
     $scope.edit = function(cat){
+        console.log("clicked");
+        console.log(cat.firstName);
+        console.log(cat.lastName);
+        console.log(cat.pizza);
+        $scope.editEnabled = true;
+        $http.get('/get/' + cat._id).then(function(response){
+        $scope.editCat = response.data;
+            console.log($scope.editCat);
+        });
 
     };
+
+    $scope.update = function(editCat) {
+        console.log('update', editCat);
+
+        $http.put('/put' , editCat).then(function(response){
+            console.log("this is the updated data", response.data);
+            console.log("update is done");
+        });
+    };
+
 
 }]);
